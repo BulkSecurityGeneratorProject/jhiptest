@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "entry",
+            "otherEntityName": "entry",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "phone"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "internal",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "external",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "number",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171226120220",
+    "entityTableName": "phone",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

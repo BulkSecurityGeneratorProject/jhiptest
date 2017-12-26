@@ -1,0 +1,52 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPhoneLabel" jhiTranslate="jhiptestApp.phone.home.createOrEditLabel">Create or edit a Phone</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!phone.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="phone.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhiptestApp.phone.type" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                [(ngModel)]="phone.type" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhiptestApp.phone.internal" for="field_internal">Internal</label>
+            <input type="checkbox" class="form-control" name="internal" id="field_internal"
+                [(ngModel)]="phone.internal" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhiptestApp.phone.external" for="field_external">External</label>
+            <input type="checkbox" class="form-control" name="external" id="field_external"
+                [(ngModel)]="phone.external" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhiptestApp.phone.number" for="field_number">Number</label>
+            <input type="text" class="form-control" name="number" id="field_number"
+                [(ngModel)]="phone.number" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhiptestApp.phone.entry" for="field_entry">Entry</label>
+            <select class="form-control" id="field_entry" name="entry" [(ngModel)]="phone.entryId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entryOption.id" *ngFor="let entryOption of entries; trackBy: trackEntryById">{{entryOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

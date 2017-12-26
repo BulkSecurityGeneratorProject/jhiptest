@@ -1,0 +1,54 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myMembershipLabel" jhiTranslate="jhiptestApp.membership.home.createOrEditLabel">Create or edit a Membership</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!membership.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="membership.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhiptestApp.membership.type" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                [(ngModel)]="membership.type" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhiptestApp.membership.functionName" for="field_functionName">Function Name</label>
+            <input type="text" class="form-control" name="functionName" id="field_functionName"
+                [(ngModel)]="membership.functionName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhiptestApp.membership.sortKey" for="field_sortKey">Sort Key</label>
+            <input type="number" class="form-control" name="sortKey" id="field_sortKey"
+                [(ngModel)]="membership.sortKey" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhiptestApp.membership.person" for="field_person">Person</label>
+            <select class="form-control" id="field_person" name="person" [(ngModel)]="membership.personId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="personOption.id" *ngFor="let personOption of people; trackBy: trackPersonById">{{personOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhiptestApp.membership.organisation" for="field_organisation">Organisation</label>
+            <select class="form-control" id="field_organisation" name="organisation" [(ngModel)]="membership.organisationId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="organisationOption.id" *ngFor="let organisationOption of organisations; trackBy: trackOrganisationById">{{organisationOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

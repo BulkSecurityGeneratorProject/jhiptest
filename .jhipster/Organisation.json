@@ -1,0 +1,58 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "parent",
+            "otherEntityName": "organisation",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "child"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "entries",
+            "otherEntityName": "entry",
+            "otherEntityRelationshipName": "organisation"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "membership",
+            "otherEntityName": "membership",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "organisation"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "child",
+            "otherEntityName": "organisation",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "parent"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shortName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sortKey",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20171226120217",
+    "entityTableName": "organisation",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

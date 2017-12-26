@@ -1,0 +1,26 @@
+{
+    "jhiptestApp": {
+        "phone" : {
+            "home": {
+                "title": "Phones",
+                "createLabel": "Phone erstellen",
+                "createOrEditLabel": "Phone erstellen oder bearbeiten",
+                "search": "Suche nach Phone"
+            },
+            "created": "Phone erstellt mit ID {{ param }}",
+            "updated": "Phone aktualisiert mit ID {{ param }}",
+            "deleted": "Phone gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Phone {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Phone"
+            },
+            "type": "Type",
+            "internal": "Internal",
+            "external": "External",
+            "number": "Number",
+            "entry": "Entry"
+        }
+    }
+}

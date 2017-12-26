@@ -1,0 +1,29 @@
+{
+    "jhiptestApp": {
+        "organisation" : {
+            "home": {
+                "title": "Organisations",
+                "createLabel": "Genera un nuovo Organisation",
+                "createOrEditLabel": "Genera o modifica un Organisation",
+                "search": "Cerca Organisation"
+            },
+            "created": "&Egrave; stato generato un nuovo Organisation con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Organisation identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Organisation con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Organisation {{ id }}?"
+            },
+            "detail": {
+                "title": "Organisation"
+            },
+            "type": "Type",
+            "name": "Name",
+            "shortName": "Short Name",
+            "sortKey": "Sort Key",
+            "parent": "Parent",
+            "entries": "Entries",
+            "membership": "Membership",
+            "child": "Child"
+        }
+    }
+}

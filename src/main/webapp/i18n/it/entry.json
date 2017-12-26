@@ -1,0 +1,25 @@
+{
+    "jhiptestApp": {
+        "entry" : {
+            "home": {
+                "title": "Entries",
+                "createLabel": "Genera un nuovo Entry",
+                "createOrEditLabel": "Genera o modifica un Entry",
+                "search": "Cerca Entry"
+            },
+            "created": "&Egrave; stato generato un nuovo Entry con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Entry identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Entry con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Entry {{ id }}?"
+            },
+            "detail": {
+                "title": "Entry"
+            },
+            "type": "Type",
+            "sortKey": "Sort Key",
+            "organisation": "Organisation",
+            "membership": "Membership"
+        }
+    }
+}

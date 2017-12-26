@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "person",
+            "otherEntityName": "person",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "membership"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "organisation",
+            "otherEntityName": "organisation",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "membership"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "entries",
+            "otherEntityName": "entry",
+            "otherEntityRelationshipName": "membership"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "functionName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sortKey",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20171226120218",
+    "entityTableName": "membership",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

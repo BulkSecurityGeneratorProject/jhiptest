@@ -1,0 +1,46 @@
+
+<div *ngIf="membership">
+    <h2><span jhiTranslate="jhiptestApp.membership.detail.title">Membership</span> {{membership.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhiptestApp.membership.type">Type</span></dt>
+        <dd>
+            <span>{{membership.type}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhiptestApp.membership.functionName">Function Name</span></dt>
+        <dd>
+            <span>{{membership.functionName}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhiptestApp.membership.sortKey">Sort Key</span></dt>
+        <dd>
+            <span>{{membership.sortKey}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhiptestApp.membership.person">Person</span></dt>
+        <dd>
+            <div *ngIf="membership.personId">
+                <a [routerLink]="['/person-my-suffix', membership.personId]">{{membership.personId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jhiptestApp.membership.organisation">Organisation</span></dt>
+        <dd>
+            <div *ngIf="membership.organisationId">
+                <a [routerLink]="['/organisation-my-suffix', membership.organisationId]">{{membership.organisationId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'membership-my-suffix/'+ membership.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

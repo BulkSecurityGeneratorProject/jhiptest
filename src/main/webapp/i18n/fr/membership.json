@@ -1,0 +1,27 @@
+{
+    "jhiptestApp": {
+        "membership" : {
+            "home": {
+                "title": "Memberships",
+                "createLabel": "Créer un nouveau Membership",
+                "createOrEditLabel": "Créer ou éditer un Membership",
+                "search": "Recherche pour Membership"
+            },
+            "created": "Un nouveau Membership a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Membership avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Membership avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Membership {{ id }} ?"
+            },
+            "detail": {
+                "title": "Membership"
+            },
+            "type": "Type",
+            "functionName": "Function Name",
+            "sortKey": "Sort Key",
+            "person": "Person",
+            "organisation": "Organisation",
+            "entries": "Entries"
+        }
+    }
+}
