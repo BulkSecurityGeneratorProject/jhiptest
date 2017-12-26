@@ -1,0 +1,29 @@
+{
+    "jhiptestApp": {
+        "organisation" : {
+            "home": {
+                "title": "Organisations",
+                "createLabel": "Organisation erstellen",
+                "createOrEditLabel": "Organisation erstellen oder bearbeiten",
+                "search": "Suche nach Organisation"
+            },
+            "created": "Organisation erstellt mit ID {{ param }}",
+            "updated": "Organisation aktualisiert mit ID {{ param }}",
+            "deleted": "Organisation gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Organisation {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Organisation"
+            },
+            "type": "Type",
+            "name": "Name",
+            "shortName": "Short Name",
+            "sortKey": "Sort Key",
+            "parent": "Parent",
+            "entries": "Entries",
+            "membership": "Membership",
+            "child": "Child"
+        }
+    }
+}

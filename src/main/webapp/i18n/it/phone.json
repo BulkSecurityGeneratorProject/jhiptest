@@ -1,0 +1,26 @@
+{
+    "jhiptestApp": {
+        "phone" : {
+            "home": {
+                "title": "Phones",
+                "createLabel": "Genera un nuovo Phone",
+                "createOrEditLabel": "Genera o modifica un Phone",
+                "search": "Cerca Phone"
+            },
+            "created": "&Egrave; stato generato un nuovo Phone con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Phone identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Phone con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Phone {{ id }}?"
+            },
+            "detail": {
+                "title": "Phone"
+            },
+            "type": "Type",
+            "internal": "Internal",
+            "external": "External",
+            "number": "Number",
+            "entry": "Entry"
+        }
+    }
+}

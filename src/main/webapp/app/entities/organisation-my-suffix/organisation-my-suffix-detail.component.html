@@ -1,0 +1,44 @@
+
+<div *ngIf="organisation">
+    <h2><span jhiTranslate="jhiptestApp.organisation.detail.title">Organisation</span> {{organisation.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhiptestApp.organisation.type">Type</span></dt>
+        <dd>
+            <span>{{organisation.type}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhiptestApp.organisation.name">Name</span></dt>
+        <dd>
+            <span>{{organisation.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhiptestApp.organisation.shortName">Short Name</span></dt>
+        <dd>
+            <span>{{organisation.shortName}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhiptestApp.organisation.sortKey">Sort Key</span></dt>
+        <dd>
+            <span>{{organisation.sortKey}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhiptestApp.organisation.parent">Parent</span></dt>
+        <dd>
+            <div *ngIf="organisation.parentId">
+                <a [routerLink]="['/organisation-my-suffix', organisation.parentId]">{{organisation.parentId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'organisation-my-suffix/'+ organisation.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
