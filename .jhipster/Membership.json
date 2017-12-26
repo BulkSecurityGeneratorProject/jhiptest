@@ -17,7 +17,7 @@
         },
         {
             "relationshipType": "one-to-many",
-            "relationshipName": "phones",
+            "relationshipName": "phone",
             "otherEntityName": "phone",
             "otherEntityRelationshipName": "membership"
         }

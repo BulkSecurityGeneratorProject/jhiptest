@@ -21,7 +21,7 @@
             "shortName": "Short Name",
             "sortKey": "Sort Key",
             "parent": "Parent",
-            "phones": "Phones",
+            "phone": "Phone",
             "membership": "Membership",
             "child": "Child"
         }
