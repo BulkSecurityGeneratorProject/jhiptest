@@ -20,12 +20,6 @@ entity Membership {
     sortKey Long
 }
 
-entity Entry {
-	id Long
-    type String
-    sortKey Long
-}
-
 entity Phone {
 	id Long
     type String
@@ -35,15 +29,14 @@ entity Phone {
 }
 
 relationship OneToOne {
-	Membership{person} to Person{membership}
 	Membership{organisation} to Organisation{membership}
 	Organisation{parent} to Organisation{child}
-    Phone{entry} to Entry
 }
 
 relationship OneToMany {
-	Membership{entries} to Entry
-	Organisation{entries} to Entry
+	Person{membership} to Membership
+	Membership{phones} to Phone
+	Organisation{phones} to Phone
 }
 
 // Set pagination options

@@ -2,10 +2,9 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "one-to-one",
+            "relationshipType": "one-to-many",
             "relationshipName": "membership",
             "otherEntityName": "membership",
-            "ownerSide": false,
             "otherEntityRelationshipName": "person"
         }
     ],

@@ -3,7 +3,6 @@ package com.consulthys.jhiptest.application.service;
 import com.consulthys.jhiptest.application.service.dto.PersonDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import java.util.List;
 
 /**
  * Service Interface for managing Person.
@@ -25,12 +24,6 @@ public interface PersonService {
      * @return the list of entities
      */
     Page<PersonDTO> findAll(Pageable pageable);
-    /**
-     * Get all the PersonDTO where Membership is null.
-     *
-     * @return the list of entities
-     */
-    List<PersonDTO> findAllWhereMembershipIsNull();
 
     /**
      * Get the "id" person.

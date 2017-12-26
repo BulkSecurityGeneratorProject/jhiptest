@@ -17,7 +17,7 @@ public interface MembershipMapper extends EntityMapper<MembershipDTO, Membership
 
     @Mapping(source = "personId", target = "person")
     @Mapping(source = "organisationId", target = "organisation")
-    @Mapping(target = "entries", ignore = true)
+    @Mapping(target = "phones", ignore = true)
     Membership toEntity(MembershipDTO membershipDTO);
 
     default Membership fromId(Long id) {

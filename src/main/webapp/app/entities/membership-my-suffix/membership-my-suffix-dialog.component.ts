@@ -38,19 +38,8 @@ export class MembershipMySuffixDialogComponent implements OnInit {
 
     ngOnInit() {
         this.isSaving = false;
-        this.personService
-            .query({filter: 'membership-is-null'})
-            .subscribe((res: ResponseWrapper) => {
-                if (!this.membership.personId) {
-                    this.people = res.json;
-                } else {
-                    this.personService
-                        .find(this.membership.personId)
-                        .subscribe((subRes: PersonMySuffix) => {
-                            this.people = [subRes].concat(res.json);
-                        }, (subRes: ResponseWrapper) => this.onError(subRes.json));
-                }
-            }, (res: ResponseWrapper) => this.onError(res.json));
+        this.personService.query()
+            .subscribe((res: ResponseWrapper) => { this.people = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
         this.organisationService
             .query({filter: 'membership-is-null'})
             .subscribe((res: ResponseWrapper) => {

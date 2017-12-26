@@ -8,7 +8,7 @@ export class MembershipMySuffix implements BaseEntity {
         public sortKey?: number,
         public personId?: number,
         public organisationId?: number,
-        public entries?: BaseEntity[],
+        public phones?: BaseEntity[],
     ) {
     }
 }

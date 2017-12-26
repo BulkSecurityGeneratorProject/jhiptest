@@ -6,7 +6,7 @@ export class PersonMySuffix implements BaseEntity {
         public type?: string,
         public firstName?: string,
         public lastName?: string,
-        public membershipId?: number,
+        public memberships?: BaseEntity[],
     ) {
     }
 }

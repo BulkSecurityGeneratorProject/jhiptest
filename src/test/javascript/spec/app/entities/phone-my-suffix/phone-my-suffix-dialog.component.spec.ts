@@ -8,7 +8,8 @@ import { JhiptestTestModule } from '../../../test.module';
 import { PhoneMySuffixDialogComponent } from '../../../../../../main/webapp/app/entities/phone-my-suffix/phone-my-suffix-dialog.component';
 import { PhoneMySuffixService } from '../../../../../../main/webapp/app/entities/phone-my-suffix/phone-my-suffix.service';
 import { PhoneMySuffix } from '../../../../../../main/webapp/app/entities/phone-my-suffix/phone-my-suffix.model';
-import { EntryMySuffixService } from '../../../../../../main/webapp/app/entities/entry-my-suffix';
+import { OrganisationMySuffixService } from '../../../../../../main/webapp/app/entities/organisation-my-suffix';
+import { MembershipMySuffixService } from '../../../../../../main/webapp/app/entities/membership-my-suffix';
 
 describe('Component Tests', () => {
 
@@ -24,7 +25,8 @@ describe('Component Tests', () => {
                 imports: [JhiptestTestModule],
                 declarations: [PhoneMySuffixDialogComponent],
                 providers: [
-                    EntryMySuffixService,
+                    OrganisationMySuffixService,
+                    MembershipMySuffixService,
                     PhoneMySuffixService
                 ]
             })

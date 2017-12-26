@@ -20,7 +20,8 @@
             "internal": "Internal",
             "external": "External",
             "number": "Number",
-            "entry": "Entry"
+            "organisation": "Organisation",
+            "membership": "Membership"
         }
     }
 }

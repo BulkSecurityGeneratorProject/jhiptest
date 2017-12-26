@@ -33,8 +33,7 @@ public class Membership implements Serializable {
     @Column(name = "sort_key")
     private Long sortKey;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
     private Person person;
 
     @OneToOne
@@ -43,7 +42,7 @@ public class Membership implements Serializable {
 
     @OneToMany(mappedBy = "membership")
     @JsonIgnore
-    private Set<Entry> entries = new HashSet<>();
+    private Set<Phone> phones = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -119,29 +118,29 @@ public class Membership implements Serializable {
         this.organisation = organisation;
     }
 
-    public Set<Entry> getEntries() {
-        return entries;
+    public Set<Phone> getPhones() {
+        return phones;
     }
 
-    public Membership entries(Set<Entry> entries) {
-        this.entries = entries;
+    public Membership phones(Set<Phone> phones) {
+        this.phones = phones;
         return this;
     }
 
-    public Membership addEntries(Entry entry) {
-        this.entries.add(entry);
-        entry.setMembership(this);
+    public Membership addPhones(Phone phone) {
+        this.phones.add(phone);
+        phone.setMembership(this);
         return this;
     }
 
-    public Membership removeEntries(Entry entry) {
-        this.entries.remove(entry);
-        entry.setMembership(null);
+    public Membership removePhones(Phone phone) {
+        this.phones.remove(phone);
+        phone.setMembership(null);
         return this;
     }
 
-    public void setEntries(Set<Entry> entries) {
-        this.entries = entries;
+    public void setPhones(Set<Phone> phones) {
+        this.phones = phones;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

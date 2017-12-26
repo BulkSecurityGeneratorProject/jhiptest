@@ -37,9 +37,15 @@
             <column name="jhi_number" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="entry_id" type="bigint">
-                <constraints unique="true" nullable="true" />
+
+            <column name="organisation_id" type="bigint">
+                <constraints nullable="true" />
             </column>
+
+            <column name="membership_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         

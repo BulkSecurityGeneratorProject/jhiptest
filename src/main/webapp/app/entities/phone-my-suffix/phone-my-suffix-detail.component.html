@@ -20,10 +20,16 @@
         <dd>
             <span>{{phone.number}}</span>
         </dd>
-        <dt><span jhiTranslate="jhiptestApp.phone.entry">Entry</span></dt>
+        <dt><span jhiTranslate="jhiptestApp.phone.organisation">Organisation</span></dt>
         <dd>
-            <div *ngIf="phone.entryId">
-                <a [routerLink]="['/entry-my-suffix', phone.entryId]">{{phone.entryId}}</a>
+            <div *ngIf="phone.organisationId">
+                <a [routerLink]="['/organisation-my-suffix', phone.organisationId]">{{phone.organisationId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="jhiptestApp.phone.membership">Membership</span></dt>
+        <dd>
+            <div *ngIf="phone.membershipId">
+                <a [routerLink]="['/membership-my-suffix', phone.membershipId]">{{phone.membershipId}}</a>
             </div>
         </dd>
     </dl>

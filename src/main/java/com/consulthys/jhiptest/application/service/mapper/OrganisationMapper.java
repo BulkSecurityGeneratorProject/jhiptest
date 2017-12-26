@@ -15,7 +15,7 @@ public interface OrganisationMapper extends EntityMapper<OrganisationDTO, Organi
     OrganisationDTO toDto(Organisation organisation); 
 
     @Mapping(source = "parentId", target = "parent")
-    @Mapping(target = "entries", ignore = true)
+    @Mapping(target = "phones", ignore = true)
     @Mapping(target = "membership", ignore = true)
     @Mapping(target = "child", ignore = true)
     Organisation toEntity(OrganisationDTO organisationDTO);

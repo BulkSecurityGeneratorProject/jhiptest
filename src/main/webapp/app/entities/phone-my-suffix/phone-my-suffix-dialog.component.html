@@ -34,10 +34,17 @@
         </div>
 
         <div class="form-group">
-            <label class="form-control-label" jhiTranslate="jhiptestApp.phone.entry" for="field_entry">Entry</label>
-            <select class="form-control" id="field_entry" name="entry" [(ngModel)]="phone.entryId">
+            <label class="form-control-label" jhiTranslate="jhiptestApp.phone.organisation" for="field_organisation">Organisation</label>
+            <select class="form-control" id="field_organisation" name="organisation" [(ngModel)]="phone.organisationId" >
                 <option [ngValue]="null"></option>
-                <option [ngValue]="entryOption.id" *ngFor="let entryOption of entries; trackBy: trackEntryById">{{entryOption.id}}</option>
+                <option [ngValue]="organisationOption.id" *ngFor="let organisationOption of organisations; trackBy: trackOrganisationById">{{organisationOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jhiptestApp.phone.membership" for="field_membership">Membership</label>
+            <select class="form-control" id="field_membership" name="membership" [(ngModel)]="phone.membershipId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="membershipOption.id" *ngFor="let membershipOption of memberships; trackBy: trackMembershipById">{{membershipOption.id}}</option>
             </select>
         </div>
     </div>

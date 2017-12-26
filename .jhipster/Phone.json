@@ -2,12 +2,16 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "one-to-one",
-            "relationshipName": "entry",
-            "otherEntityName": "entry",
-            "otherEntityField": "id",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "phone"
+            "relationshipName": "organisation",
+            "otherEntityName": "organisation",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "membership",
+            "otherEntityName": "membership",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "fields": [

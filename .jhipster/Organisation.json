@@ -11,8 +11,8 @@
         },
         {
             "relationshipType": "one-to-many",
-            "relationshipName": "entries",
-            "otherEntityName": "entry",
+            "relationshipName": "phones",
+            "otherEntityName": "phone",
             "otherEntityRelationshipName": "organisation"
         },
         {

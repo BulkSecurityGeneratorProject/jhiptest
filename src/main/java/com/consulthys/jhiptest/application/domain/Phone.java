@@ -33,9 +33,11 @@ public class Phone implements Serializable {
     @Column(name = "jhi_number")
     private String number;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private Entry entry;
+    @ManyToOne
+    private Organisation organisation;
+
+    @ManyToOne
+    private Membership membership;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -98,17 +100,30 @@ public class Phone implements Serializable {
         this.number = number;
     }
 
-    public Entry getEntry() {
-        return entry;
+    public Organisation getOrganisation() {
+        return organisation;
     }
 
-    public Phone entry(Entry entry) {
-        this.entry = entry;
+    public Phone organisation(Organisation organisation) {
+        this.organisation = organisation;
         return this;
     }
 
-    public void setEntry(Entry entry) {
-        this.entry = entry;
+    public void setOrganisation(Organisation organisation) {
+        this.organisation = organisation;
+    }
+
+    public Membership getMembership() {
+        return membership;
+    }
+
+    public Phone membership(Membership membership) {
+        this.membership = membership;
+        return this;
+    }
+
+    public void setMembership(Membership membership) {
+        this.membership = membership;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

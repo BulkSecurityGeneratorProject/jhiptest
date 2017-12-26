@@ -21,7 +21,9 @@ public class PhoneDTO implements Serializable {
 
     private String number;
 
-    private Long entryId;
+    private Long organisationId;
+
+    private Long membershipId;
 
     public Long getId() {
         return id;
@@ -63,12 +65,20 @@ public class PhoneDTO implements Serializable {
         this.number = number;
     }
 
-    public Long getEntryId() {
-        return entryId;
+    public Long getOrganisationId() {
+        return organisationId;
     }
 
-    public void setEntryId(Long entryId) {
-        this.entryId = entryId;
+    public void setOrganisationId(Long organisationId) {
+        this.organisationId = organisationId;
+    }
+
+    public Long getMembershipId() {
+        return membershipId;
+    }
+
+    public void setMembershipId(Long membershipId) {
+        this.membershipId = membershipId;
     }
 
     @Override
