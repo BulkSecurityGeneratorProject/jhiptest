@@ -1,0 +1,58 @@
+entity Person {
+	id Long
+    type String
+    firstName String
+    lastName String
+}
+
+entity Organisation {
+	id Long
+    type String
+    name String
+    shortName String
+    sortKey Long    
+}
+
+entity Membership {
+	id Long
+    type String
+    functionName String
+    sortKey Long
+}
+
+entity Entry {
+	id Long
+    type String
+    sortKey Long
+}
+
+entity Phone {
+	id Long
+    type String
+    internal Boolean
+    external Boolean
+    number String
+}
+
+relationship OneToOne {
+	Membership{person} to Person{membership}
+	Membership{organisation} to Organisation{membership}
+	Organisation{parent} to Organisation{child}
+    Phone{entry} to Entry
+}
+
+relationship OneToMany {
+	Membership{entries} to Entry
+	Organisation{entries} to Entry
+}
+
+// Set pagination options
+paginate Person with infinite-scroll
+paginate Organisation with infinite-scroll
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+// Set an angular suffix
+angularSuffix * with mySuffix
