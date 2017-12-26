@@ -13,7 +13,7 @@ public interface PersonMapper extends EntityMapper<PersonDTO, Person> {
 
     
 
-    @Mapping(target = "membership", ignore = true)
+    @Mapping(target = "memberships", ignore = true)
     Person toEntity(PersonDTO personDTO);
 
     default Person fromId(Long id) {

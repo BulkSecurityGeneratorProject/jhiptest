@@ -2,12 +2,10 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "one-to-one",
             "relationshipName": "person",
             "otherEntityName": "person",
-            "otherEntityField": "id",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "membership"
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         },
         {
             "relationshipType": "one-to-one",
@@ -19,8 +17,8 @@
         },
         {
             "relationshipType": "one-to-many",
-            "relationshipName": "entries",
-            "otherEntityName": "entry",
+            "relationshipName": "phones",
+            "otherEntityName": "phone",
             "otherEntityRelationshipName": "membership"
         }
     ],

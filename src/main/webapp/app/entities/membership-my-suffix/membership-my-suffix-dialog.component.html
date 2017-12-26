@@ -30,7 +30,7 @@
 
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="jhiptestApp.membership.person" for="field_person">Person</label>
-            <select class="form-control" id="field_person" name="person" [(ngModel)]="membership.personId">
+            <select class="form-control" id="field_person" name="person" [(ngModel)]="membership.personId" >
                 <option [ngValue]="null"></option>
                 <option [ngValue]="personOption.id" *ngFor="let personOption of people; trackBy: trackPersonById">{{personOption.id}}</option>
             </select>

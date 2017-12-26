@@ -4,13 +4,11 @@ import { Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Rx';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
+import { JhiEventManager } from 'ng-jhipster';
 
 import { PersonMySuffix } from './person-my-suffix.model';
 import { PersonMySuffixPopupService } from './person-my-suffix-popup.service';
 import { PersonMySuffixService } from './person-my-suffix.service';
-import { MembershipMySuffix, MembershipMySuffixService } from '../membership-my-suffix';
-import { ResponseWrapper } from '../../shared';
 
 @Component({
     selector: 'jhi-person-my-suffix-dialog',
@@ -21,21 +19,15 @@ export class PersonMySuffixDialogComponent implements OnInit {
     person: PersonMySuffix;
     isSaving: boolean;
 
-    memberships: MembershipMySuffix[];
-
     constructor(
         public activeModal: NgbActiveModal,
-        private jhiAlertService: JhiAlertService,
         private personService: PersonMySuffixService,
-        private membershipService: MembershipMySuffixService,
         private eventManager: JhiEventManager
     ) {
     }
 
     ngOnInit() {
         this.isSaving = false;
-        this.membershipService.query()
-            .subscribe((res: ResponseWrapper) => { this.memberships = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     clear() {
@@ -66,14 +58,6 @@ export class PersonMySuffixDialogComponent implements OnInit {
 
     private onSaveError() {
         this.isSaving = false;
-    }
-
-    private onError(error: any) {
-        this.jhiAlertService.error(error.message, null, null);
-    }
-
-    trackMembershipById(index: number, item: MembershipMySuffix) {
-        return item.id;
     }
 }
 

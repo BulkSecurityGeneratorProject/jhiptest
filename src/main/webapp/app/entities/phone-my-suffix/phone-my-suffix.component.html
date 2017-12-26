@@ -34,7 +34,8 @@
             <th><span jhiTranslate="jhiptestApp.phone.internal">Internal</span></th>
             <th><span jhiTranslate="jhiptestApp.phone.external">External</span></th>
             <th><span jhiTranslate="jhiptestApp.phone.number">Number</span></th>
-            <th><span jhiTranslate="jhiptestApp.phone.entry">Entry</span></th>
+            <th><span jhiTranslate="jhiptestApp.phone.organisation">Organisation</span></th>
+            <th><span jhiTranslate="jhiptestApp.phone.membership">Membership</span></th>
             <th></th>
             </tr>
             </thead>
@@ -46,8 +47,13 @@
                 <td>{{phone.external}}</td>
                 <td>{{phone.number}}</td>
                 <td>
-                    <div *ngIf="phone.entryId">
-                        <a [routerLink]="['../entry-my-suffix', phone.entryId  ]" >{{phone.entryId}}</a>
+                    <div *ngIf="phone.organisationId">
+                        <a [routerLink]="['../organisation-my-suffix', phone.organisationId  ]" >{{phone.organisationId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="phone.membershipId">
+                        <a [routerLink]="['../membership-my-suffix', phone.membershipId  ]" >{{phone.membershipId}}</a>
                     </div>
                 </td>
                 <td class="text-right">

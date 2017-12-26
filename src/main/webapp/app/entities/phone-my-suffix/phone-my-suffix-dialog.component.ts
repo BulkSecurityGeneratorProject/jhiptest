@@ -9,7 +9,8 @@ import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { PhoneMySuffix } from './phone-my-suffix.model';
 import { PhoneMySuffixPopupService } from './phone-my-suffix-popup.service';
 import { PhoneMySuffixService } from './phone-my-suffix.service';
-import { EntryMySuffix, EntryMySuffixService } from '../entry-my-suffix';
+import { OrganisationMySuffix, OrganisationMySuffixService } from '../organisation-my-suffix';
+import { MembershipMySuffix, MembershipMySuffixService } from '../membership-my-suffix';
 import { ResponseWrapper } from '../../shared';
 
 @Component({
@@ -21,32 +22,26 @@ export class PhoneMySuffixDialogComponent implements OnInit {
     phone: PhoneMySuffix;
     isSaving: boolean;
 
-    entries: EntryMySuffix[];
+    organisations: OrganisationMySuffix[];
+
+    memberships: MembershipMySuffix[];
 
     constructor(
         public activeModal: NgbActiveModal,
         private jhiAlertService: JhiAlertService,
         private phoneService: PhoneMySuffixService,
-        private entryService: EntryMySuffixService,
+        private organisationService: OrganisationMySuffixService,
+        private membershipService: MembershipMySuffixService,
         private eventManager: JhiEventManager
     ) {
     }
 
     ngOnInit() {
         this.isSaving = false;
-        this.entryService
-            .query({filter: 'phone-is-null'})
-            .subscribe((res: ResponseWrapper) => {
-                if (!this.phone.entryId) {
-                    this.entries = res.json;
-                } else {
-                    this.entryService
-                        .find(this.phone.entryId)
-                        .subscribe((subRes: EntryMySuffix) => {
-                            this.entries = [subRes].concat(res.json);
-                        }, (subRes: ResponseWrapper) => this.onError(subRes.json));
-                }
-            }, (res: ResponseWrapper) => this.onError(res.json));
+        this.organisationService.query()
+            .subscribe((res: ResponseWrapper) => { this.organisations = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
+        this.membershipService.query()
+            .subscribe((res: ResponseWrapper) => { this.memberships = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     clear() {
@@ -83,7 +78,11 @@ export class PhoneMySuffixDialogComponent implements OnInit {
         this.jhiAlertService.error(error.message, null, null);
     }
 
-    trackEntryById(index: number, item: EntryMySuffix) {
+    trackOrganisationById(index: number, item: OrganisationMySuffix) {
+        return item.id;
+    }
+
+    trackMembershipById(index: number, item: MembershipMySuffix) {
         return item.id;
     }
 }

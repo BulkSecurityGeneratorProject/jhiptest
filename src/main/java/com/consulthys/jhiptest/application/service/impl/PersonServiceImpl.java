@@ -13,10 +13,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 import static org.elasticsearch.index.query.QueryBuilders.*;
 
@@ -69,21 +65,6 @@ public class PersonServiceImpl implements PersonService{
         log.debug("Request to get all People");
         return personRepository.findAll(pageable)
             .map(personMapper::toDto);
-    }
-
-
-    /**
-     *  get all the people where Membership is null.
-     *  @return the list of entities
-     */
-    @Transactional(readOnly = true) 
-    public List<PersonDTO> findAllWhereMembershipIsNull() {
-        log.debug("Request to get all people where Membership is null");
-        return StreamSupport
-            .stream(personRepository.findAll().spliterator(), false)
-            .filter(person -> person.getMembership() == null)
-            .map(personMapper::toDto)
-            .collect(Collectors.toCollection(LinkedList::new));
     }
 
     /**

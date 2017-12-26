@@ -88,17 +88,11 @@ public class PersonResource {
      * GET  /people : get all the people.
      *
      * @param pageable the pagination information
-     * @param filter the filter of the request
      * @return the ResponseEntity with status 200 (OK) and the list of people in body
      */
     @GetMapping("/people")
     @Timed
-    public ResponseEntity<List<PersonDTO>> getAllPeople(Pageable pageable, @RequestParam(required = false) String filter) {
-        if ("membership-is-null".equals(filter)) {
-            log.debug("REST request to get all Persons where membership is null");
-            return new ResponseEntity<>(personService.findAllWhereMembershipIsNull(),
-                    HttpStatus.OK);
-        }
+    public ResponseEntity<List<PersonDTO>> getAllPeople(Pageable pageable) {
         log.debug("REST request to get a page of People");
         Page<PersonDTO> page = personService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/people");

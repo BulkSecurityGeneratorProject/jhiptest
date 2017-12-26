@@ -8,7 +8,7 @@ export class OrganisationMySuffix implements BaseEntity {
         public shortName?: string,
         public sortKey?: number,
         public parentId?: number,
-        public entries?: BaseEntity[],
+        public phones?: BaseEntity[],
         public membershipId?: number,
         public childId?: number,
     ) {

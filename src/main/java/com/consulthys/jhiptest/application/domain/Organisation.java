@@ -42,7 +42,7 @@ public class Organisation implements Serializable {
 
     @OneToMany(mappedBy = "organisation")
     @JsonIgnore
-    private Set<Entry> entries = new HashSet<>();
+    private Set<Phone> phones = new HashSet<>();
 
     @OneToOne(mappedBy = "organisation")
     @JsonIgnore
@@ -126,29 +126,29 @@ public class Organisation implements Serializable {
         this.parent = organisation;
     }
 
-    public Set<Entry> getEntries() {
-        return entries;
+    public Set<Phone> getPhones() {
+        return phones;
     }
 
-    public Organisation entries(Set<Entry> entries) {
-        this.entries = entries;
+    public Organisation phones(Set<Phone> phones) {
+        this.phones = phones;
         return this;
     }
 
-    public Organisation addEntries(Entry entry) {
-        this.entries.add(entry);
-        entry.setOrganisation(this);
+    public Organisation addPhones(Phone phone) {
+        this.phones.add(phone);
+        phone.setOrganisation(this);
         return this;
     }
 
-    public Organisation removeEntries(Entry entry) {
-        this.entries.remove(entry);
-        entry.setOrganisation(null);
+    public Organisation removePhones(Phone phone) {
+        this.phones.remove(phone);
+        phone.setOrganisation(null);
         return this;
     }
 
-    public void setEntries(Set<Entry> entries) {
-        this.entries = entries;
+    public void setPhones(Set<Phone> phones) {
+        this.phones = phones;
     }
 
     public Membership getMembership() {

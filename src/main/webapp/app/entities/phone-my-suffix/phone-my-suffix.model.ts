@@ -7,7 +7,8 @@ export class PhoneMySuffix implements BaseEntity {
         public internal?: boolean,
         public external?: boolean,
         public number?: string,
-        public entryId?: number,
+        public organisationId?: number,
+        public membershipId?: number,
     ) {
         this.internal = false;
         this.external = false;
