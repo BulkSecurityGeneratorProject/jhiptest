@@ -35,8 +35,8 @@ relationship OneToOne {
 
 relationship OneToMany {
 	Person{membership} to Membership
-	Membership{phones} to Phone
-	Organisation{phones} to Phone
+	Membership{phone} to Phone
+	Organisation{phone} to Phone
 }
 
 // Set pagination options
