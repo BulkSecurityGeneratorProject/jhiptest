@@ -135,13 +135,13 @@ public class Organisation implements Serializable {
         return this;
     }
 
-    public Organisation addPhones(Phone phone) {
+    public Organisation addPhone(Phone phone) {
         this.phones.add(phone);
         phone.setOrganisation(this);
         return this;
     }
 
-    public Organisation removePhones(Phone phone) {
+    public Organisation removePhone(Phone phone) {
         this.phones.remove(phone);
         phone.setOrganisation(null);
         return this;

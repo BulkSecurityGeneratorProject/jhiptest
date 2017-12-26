@@ -127,13 +127,13 @@ public class Membership implements Serializable {
         return this;
     }
 
-    public Membership addPhones(Phone phone) {
+    public Membership addPhone(Phone phone) {
         this.phones.add(phone);
         phone.setMembership(this);
         return this;
     }
 
-    public Membership removePhones(Phone phone) {
+    public Membership removePhone(Phone phone) {
         this.phones.remove(phone);
         phone.setMembership(null);
         return this;
